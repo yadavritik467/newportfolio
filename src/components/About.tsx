@@ -1,37 +1,80 @@
+import { useEffect, useState } from "react";
+
 const About = () => {
-  const skills: { skillName: string; percentage: number }[] = [
+  const [skills, setSkills] = useState<
+    { skillName: string; percentage: number }[]
+  >([
     {
       skillName: "React Js",
-      percentage: 78,
+      percentage: 0,
     },
     {
       skillName: "Next Js",
-      percentage: 55,
+      percentage: 0,
     },
     {
       skillName: "Angular Js",
-      percentage: 65,
+      percentage: 0,
     },
     {
       skillName: "Node / Express Js",
-      percentage: 70,
+      percentage: 0,
     },
     {
       skillName: "Mongodb",
-      percentage: 62,
+      percentage: 0,
+    },
+    {
+      skillName: "MySql",
+      percentage: 0,
     },
     {
       skillName: "Tailwind css",
-      percentage: 78,
+      percentage: 0,
     },
-  ];
+  ]);
+
+  useEffect(() => {
+   setTimeout(() => {
+    setSkills([
+      {
+        skillName: "React Js",
+        percentage: 78,
+      },
+      {
+        skillName: "Next Js",
+        percentage: 55,
+      },
+      {
+        skillName: "Angular Js",
+        percentage: 65,
+      },
+      {
+        skillName: "Node / Express Js",
+        percentage: 70,
+      },
+      {
+        skillName: "Mongodb",
+        percentage: 62,
+      },
+      {
+        skillName: "MySql",
+        percentage: 52,
+      },
+      {
+        skillName: "Tailwind css",
+        percentage: 78,
+      },
+    ]);
+   }, 300);
+  }, []);
 
   return (
     <div id="about" className="bg-white grid grid-cols-12  pb-5 h-fit">
       <div className="col-span-12 text-center py-5">
         <p className="text-primary text-[30px]">About Me</p>
       </div>
-      <div className="col-span-6 p-20 pt-10">
+      <div className="col-span-6 max-2xl:col-span-12 max-sm:px-5 p-20 pt-10">
         <p className="text-justify">
           <span className="font-bold text-[25px] text-primary-dark tracking-wider">
             {" "}
@@ -52,11 +95,11 @@ const About = () => {
           </span>
         </p>
       </div>
-      <div className="col-span-6 flex flex-col gap-10 pt-10 px-5">
+      <div className="col-span-6 max-2xl:col-span-12 max-sm:px-5 flex flex-col gap-10 pt-10 max-2xl:px-20  px-5">
         {skills?.map((sk, i) => (
           <div
             key={i}
-            className="w-[500px] relative border border-primary h-[18px] rounded-full"
+            className="w-[500px] max-2xl:w-full relative border border-primary h-[18px] rounded-full"
           >
             <span className="absolute top-[-25px] text-primary-dark left-0">
               {sk?.skillName}
@@ -66,7 +109,7 @@ const About = () => {
             </span>
             <div
               style={{ width: `${sk?.percentage}%` }}
-              className={`bg-primary transition-all duration-300  h-full rounded-full`}
+              className={`bg-primary transition-all duration-1000  h-full rounded-full`}
             ></div>
           </div>
         ))}
