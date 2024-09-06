@@ -4,7 +4,7 @@ import {
   AiOutlineWhatsApp,
 } from "react-icons/ai";
 import { FaGithub } from "react-icons/fa";
-import Typewriter from "../utils/Typewriter";
+import Typewriter from "react-yadav-typewriter";
 
 const Hero = () => {
   return (
@@ -20,7 +20,16 @@ const Hero = () => {
           <p className="text-[55px]  max-sm:text-[45px] font-bold tracking-wider text-primary-dark">
             Ritik Yadav
           </p>
-          <Typewriter />
+          <Typewriter
+            words={[
+              "A Full Stack Developer",
+              "A MERN Stack Developer",
+              "A MEAN Stack Developer",
+            ]}
+            typingSpeed={30}
+            deletingSpeed={50}
+            className="tracking-wider text-[17px] text-primary-dark"
+          />
           <p className="text-primary-dark text-[17px] py-2 sm:w-[400px]  text-justify tracking-wider">
             As a Full Stack Developer specializing in MERN and MEAN stacks, I
             create robust, scalable web applications. I excel at building
