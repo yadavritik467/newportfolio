@@ -16,7 +16,7 @@ const Project = () => {
       title: "E-commerce Medicine App - MERN",
       description: `This project is an e-commerce platform built using the MERN stack and Tailwind CSS, specifically designed for purchasing medicines. It features an admin panel, data visualization using Chart.js, and functionalities like order creation, Razorpay integration for online payments, order cancellation, and product management by admins.`,
       image: "/image/project/ecommerce.png",
-      url: "", // Replace with your actual URL
+      url: "https://medical-ecommerce-front.vercel.app/", // Replace with your actual URL
       isVideo: true,
       techStack: [
         <TbBrandReactNative
